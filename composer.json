@@ -1,0 +1,40 @@
+{
+    "name": "abelacostaec/asaa-framework",
+    "description": "Simple Php Framework",
+    "autoload": {
+        "psr-4": {
+            "Asaa\\": "src/"
+        },
+        "files": [
+            "src/Helpers/app.php",
+            "src/Helpers/http.php",
+            "src/Helpers/string.php",
+            "src/Helpers/session.php",
+            "src/Helpers/auth.php"
+        ]
+    },
+    "scripts": {
+        "tests": "phpunit --color=always --testdox -v  tests/",
+        "fixer-php": ["php-cs-fixer fix src/ ","php-cs-fixer fix tests/"],
+        "documentor": "./phpDocumentor.phar -d asaa_framework/src/ -t docs"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Asaa\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abel Acosta",
+            "email": "abel.2833@hotmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "friendsofphp/php-cs-fixer": "^3.22"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "symfony/console": "^6.0"
+    }
+}
